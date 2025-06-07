@@ -140,6 +140,138 @@
       text-align: center;
       margin-top: 20px;
     }
+    /* For phone portrait (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: auto;
+  }
+
+  section {
+    padding: 15px 8px;
+  }
+
+  .contact-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-icons img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* For phone landscape (481px to 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .navbar a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: auto;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  .contact-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-icons img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* For tablets (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .header-top {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 22px;
+    text-align: center;
+    flex: 1 1 100%;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    padding: 10px 14px;
+    font-size: 17px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: auto;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  .contact-icons img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
   </style>
 </head>
 <body>
