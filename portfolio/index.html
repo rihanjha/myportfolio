@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>My Portfolio</title>
+      <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to left, #84e0fe, #AFEEEE);
+      color: #333;
+      line-height: 1.6;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px;
+     /* box-shadow: 0 7px 15px rgba(16, 15, 15, 0.8); adds kinda line too spereate header and the other section of pages by adding a shadow that last 0.8 is just the strength with which we see the color of the shadow*/
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .site-title {
+      flex:auto;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight:normal;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: background-color 0.5s, transform 1s;
+    }
+
+    .navbar a.active
+    {
+      background-color: #64ffda;
+      color: #344c70;
+      transform: scale(1.10);
+    }
+    .navbar a:hover {
+      background-color: #16715c;
+      color: #344c70;
+      transform: scale(1.10);
+    }
+
+
+ section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  display: none;
+  animation: fadeIn 0.2s ease-in forwards;
+}
+
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+    .card {
+      background: #ebe9e9c9;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.5s, box-shadow 1.5s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);/*lift up*/
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      margin-top: 60px;
+    }
+.contact-icons a i{
+  font-size: 36px;
+margin:0 15px;}
+    .contact-icons  {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .contact-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.54s;
+    }
+
+    .contact-icons img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-note {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    ol {
+      margin-left: 20px;
+    }
+
+    ol li {
+      margin-bottom: 10px;
+      font-weight: bold;
+      list-style:upper-roman;
+    }
+
+    /* Phone portairt */
+    @media (min-width: 481px) and (max-width: 640px) {
+      .header-top {
+        flex-direction:row;
+        align-items: center;
+      }
+
+      .site-title {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .navbar {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+    /* Phone landscape */
+    @media (max-width: 480px) {
+      .header-top {
+        flex-direction:row;
+        align-items: center;
+      }
+
+      .site-title {
+        font-size: 19px;
+        text-align: center;
+      }
+
+      .navbar {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+    /* tablet */
+    @media (min-width:641px) and (max-width: 1024px) {
+      .header-top {
+        flex-direction:row;
+        align-items: center;
+      }
+
+      .site-title {
+        font-size: 25px;
+        text-align: center;
+      }
+
+      .navbar {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        padding: 8px 12px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+     <div class="logo">
+  <a href="#" onclick="location.reload(); return false;">
+    <img src="brand.png" alt="RJ">
+  </a>
+</div>
+      <h1 class="site-title">RIHAN JHA | My Portfolio</h1>
+    </div>
+    <nav class="navbar">
+      <a href="#" data-target="home" class="active">Home</a>
+      <a href="#" data-target="about">About</a>
+      <a href="#" data-target="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="active">
+      <div class="card">
+        <h2>Simplicity and truth are essential for presenting a fair financial view.</h2>
+        <h2>Welcome to My Portfolio</h2>
+        <p>This is the home section. Browse around to learn more about me and services I provide!</p>
+      </div>
+      <p>I am currently pursuing ACCA and have completed 2 of the 13 papers, including FA and BT.</p><br>
+      <p>My long-term goal is to build my own company based on the philosophy of <span style="color: rgb(27, 44, 110)">"Customer Satisfaction with Staff Security"</span>.</p><br>
+      <p>I also have a growing interest in stock trading, where I actively observe market movements and develop analytical insights.
+        As I progress through ACCA, my goal is to develop into a professional capable of presenting clear, ethical, and strategically valuable financial insights that support business growth and transparency.
+      </p><br>
+    </section>
+
+    <section id="about">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate, aspiriring accountant with mindset of presenting a clear and fair truth to my clients of their financial position.
+Also, I am a trader with interest and keen-eyes on stocks with an ever- growing experience.
+        </p><br>
+        <p>
+          In my spare time, I enjoy solving math problems, researching space mysteries, and engaging in discussions with people about science, math, and even coding.
+I enjoy scrutinizing financial data, solving analytical problems, and creating meaningful financial insights for clients.        </p>
+        <p><br>
+                   My learning approach is self-motivated. I watch tutorials, read blogs, experiment with financial concepts, and take online courses to expand my technical skills. I strive for clear, meaningful and understandable accounts.
+            Though I am new in the field, I am continuously learning and growing. I appreciate any opportunity that helps me gain more experience and deliver professional-level work.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact Me</h2>
+                <p> Upon reading about my interests and passions and also growing interest in the field of accounting, I do hope that you are interested in discussing potential projects or financial work I can assist you with.</p>
+        <p>Connect with me via the following platforms:</p>
+        <div class="contact-icons">
+  <a href="https://www.instagram.com/r.j_873/" target="_blank" rel="noopener" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="mailto:rjhan456@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://wa.me/9779804822455" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+        <div class="contact-note">
+          <p>I appreciate your time and look forward to the possibility of working with you and below is a downloadable CV.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rihan Jha. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".navbar a");
+      const sections = document.querySelectorAll("main section");
+
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+
+          sections.forEach(sec => sec.classList.remove("active"));
+          const targetId = this.dataset.target;
+          document.getElementById(targetId).classList.add("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
